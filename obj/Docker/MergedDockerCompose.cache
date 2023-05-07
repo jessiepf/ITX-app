@@ -1,0 +1,30 @@
+name: dockercompose11154482191365423219
+services:
+  sql:
+    container_name: sql_server2022
+    environment:
+      ACCEPT_EULA: "y"
+      SA_PASSWORD: A&VeryComplex123Password
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 1433
+      published: "1433"
+      protocol: tcp
+  web_api:
+    build:
+      context: /Users/jessiefurigay/Desktop/ADACA/ADACA
+      dockerfile: Dockerfile
+    container_name: adaca_application
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "5001"
+      protocol: tcp
+networks:
+  default:
+    name: dockercompose11154482191365423219_default

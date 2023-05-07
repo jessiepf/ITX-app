@@ -1,0 +1,49 @@
+﻿<Properties StartupConfiguration="{BD246FEB-E110-4349-BB12-4306A3E8B08B}|Default">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint enabled="false" file="/Applications/Visual Studio.app/Contents/MonoBundle/AddIns/MonoDevelop.Docker/MSBuild/Sdks/Microsoft.Docker.Sdk/build/Microsoft.VisualStudio.Docker.Compose.targets" line="408" column="1" />
+      <Breakpoint enabled="false" file="/Users/jessiefurigay/Desktop/ITX3/ADACA/ADACA.Infrastructure/LoanRepository.cs" relfile="ADACA.Infrastructure/LoanRepository.cs" line="23" column="1" />
+      <Breakpoint enabled="false" file="/Users/jessiefurigay/Desktop/ITX3/ADACA/ADACA.Infrastructure/LoanRepository.cs" relfile="ADACA.Infrastructure/LoanRepository.cs" line="18" column="1" />
+      <Breakpoint enabled="false" file="/Users/jessiefurigay/Desktop/ITX3/ADACA/ADACA/Controllers/LoanController.cs" relfile="ADACA/Controllers/LoanController.cs" line="33" column="1" />
+      <Breakpoint file="/Users/jessiefurigay/Desktop/ITX3/ADACA/ADACA/Validator/LoanValidator.cs" relfile="ADACA/Validator/LoanValidator.cs" line="17" column="1" />
+      <Breakpoint file="/Users/jessiefurigay/Desktop/ITX3/ADACA/ADACA.Infrastructure/LoanRepository.cs" relfile="ADACA.Infrastructure/LoanRepository.cs" line="26" column="1" />
+      <Breakpoint file="/Users/jessiefurigay/Desktop/ITX3/ADACA/ADACA.Api/Controllers/LoanController.cs" relfile="ADACA.Api/Controllers/LoanController.cs" line="48" column="1" />
+      <Breakpoint file="/Users/jessiefurigay/Desktop/ITX3/ADACA/ADACA.Api/Controllers/LoanController.cs" relfile="ADACA.Api/Controllers/LoanController.cs" line="47" column="1" />
+      <Breakpoint file="/Users/jessiefurigay/Desktop/ITX3/ADACA/ADACA.Api/AutomapperConfig.cs" relfile="ADACA.Api/AutomapperConfig.cs" line="13" column="1" />
+      <Breakpoint file="/Users/jessiefurigay/Desktop/ITX3/ADACA/ADACA.Application/LoanService.cs" relfile="ADACA.Application/LoanService.cs" line="29" column="1" />
+      <Breakpoint file="/Users/jessiefurigay/Desktop/ITX3/ADACA/ADACA/Controllers/LoanController.cs" relfile="ADACA/Controllers/LoanController.cs" line="54" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.ADACA.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.ADACA PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ADACA.Infrastructure/LoanContext.cs">
+    <Files>
+      <File FileName="ADACA.Domain/PersonalInformation.cs" Line="14" Column="1" />
+      <File FileName="ADACA.Dto/PersonalInformationDto.cs" Line="5" Column="16" />
+      <File FileName="ADACA.Infrastructure/PersonalInfoRepository.cs" Line="33" Column="61" />
+      <File FileName="ADACA.Infrastructure/LoanContext.cs" Line="25" Column="14" />
+      <File FileName="ADACA.Api/PersonalInformationController.cs" Line="10" Column="20" />
+      <File FileName="ADACA.Api/Program.cs" Line="21" Column="79" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ADACA" expanded="True" selected="True">
+            <Node name="ADACA.Api" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="ADACA.Application" expanded="True" />
+            <Node name="ADACA.Domain" expanded="True" />
+            <Node name="ADACA.Dto" expanded="True" />
+            <Node name="ADACA.Infrastructure" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>

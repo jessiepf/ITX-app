@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  adaca.api:
+    image: ${DOCKER_REGISTRY-}adaca
+    build:
+      context: .
+      dockerfile: ADACA.Api/Dockerfile
