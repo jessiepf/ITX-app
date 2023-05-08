@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PersonalInfoComponent } from './personal-info/personal-info.component';
 import { PersonalListComponent } from './personal-list/personal-list.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonalInfoComponent,
     PersonalListComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,7 +6,7 @@ import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angula
   styleUrls: ['./personal-info.component.scss']
 })
 export class PersonalInfoComponent {
-  text = 'Personal Information';
+  title = 'Personal Information';
 
   personal = {
     firstName: '',

@@ -27,7 +27,7 @@ describe('PersonalInfoComponent', () => {
   });
 
   it(`should have as text 'Personal Information Form'`, (() => {
-    expect(component.text).toEqual('Personal Information');
+    expect(component.title).toEqual('Personal Information');
   }));
 
   it(`should set submitted to true`, (() => {
