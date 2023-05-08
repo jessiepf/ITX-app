@@ -42,18 +42,18 @@ describe('PersonalInfoComponent', () => {
   }));
 
   it(`form should be invalid`,  (() => {
-    component.personalInfoForm.controls['email'].setValue('');
+    component.personalInfoForm.controls['emailAddress'].setValue('');
     component.personalInfoForm.controls['firstName'].setValue('');
     component.personalInfoForm.controls['lastName'].setValue('');
-    component.personalInfoForm.controls['phone'].setValue('');
+    component.personalInfoForm.controls['phoneNumber'].setValue('');
     expect(component.personalInfoForm.valid).toBeFalsy();
   }));
 
   it(`form should be valid`, (() => {
-    component.personalInfoForm.controls['email'].setValue('jessie@asd.com');
+    component.personalInfoForm.controls['emailAddress'].setValue('jessie@asd.com');
     component.personalInfoForm.controls['firstName'].setValue('Jessie');
     component.personalInfoForm.controls['lastName'].setValue('furigay');
-    component.personalInfoForm.controls['phone'].setValue('te1234567890');
+    component.personalInfoForm.controls['phoneNumber'].setValue('te1234567890');
     expect(component.personalInfoForm.valid).toBeTruthy();
   }));
 });

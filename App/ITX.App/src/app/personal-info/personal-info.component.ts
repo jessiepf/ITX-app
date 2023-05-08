@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { PersonalServiceService } from '../service/personal-service.service';
+import { PersonalInfo } from '../models/PersonalInfo';
 @Component({
   selector: 'app-personal-info',
   templateUrl: './personal-info.component.html',
@@ -18,7 +20,7 @@ export class PersonalInfoComponent {
   personalInfoForm!: FormGroup;
   submitted = false;
 
-  constructor() {
+  constructor(public personalServiceService: PersonalServiceService) {
     this.createForm();
   }
 
@@ -31,11 +33,11 @@ export class PersonalInfoComponent {
       'lastName': new FormControl(this.personal.lastName, [
         Validators.required,
       ]),
-      'email': new FormControl(this.personal.email, [
+      'emailAddress': new FormControl(this.personal.email, [
         Validators.required,
         Validators.email
       ]),
-      'phone': new FormControl(this.personal.phone, Validators.required)
+      'phoneNumber': new FormControl(this.personal.phone, Validators.required)
     });
 
     // this.contactForm = new FormGroup({
@@ -58,6 +60,17 @@ export class PersonalInfoComponent {
   onSubmit(): void {
     this.submitted = true;
 
+    const personalInfo: PersonalInfo = {
+      id: 0,
+      firstName: this.personalInfoForm.value.firstName,
+      lastName: this.personalInfoForm.value.lastName,
+      emailAddress: this.personalInfoForm.value.emailAddress,
+      phoneNumber: this.personalInfoForm.value.phoneNumber,
+    };
+debugger;
+    this.personalServiceService.createPersonalInformation(personalInfo).subscribe( ()=> {
+      debugger;
+    })
     console.warn(this.personalInfoForm.value);
     debugger;
   }

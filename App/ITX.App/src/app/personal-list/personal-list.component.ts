@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { PersonalInfo } from '../models/PersonalInfo';
+import { PersonalServiceService } from '../service/personal-service.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-personal-list',
@@ -7,4 +10,14 @@ import { Component } from '@angular/core';
 })
 export class PersonalListComponent {
 
+  personalInfos$!: Observable<PersonalInfo[]>
+
+  constructor(public personalServiceService: PersonalServiceService) {}
+  ngOnInit() {
+    this.loadPersonalInfos();
+  }
+  // Get Personal Info list
+  loadPersonalInfos() {
+    this.personalInfos$ = this.personalServiceService.getAllPersonalInformation();
+  }
 }
