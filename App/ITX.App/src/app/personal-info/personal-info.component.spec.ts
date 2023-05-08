@@ -36,7 +36,6 @@ describe('PersonalInfoComponent', () => {
   }));
 
   it(`should call the onSubmit method`, (() => {
-
     const editSpy = spyOn(component, 'onSubmit').and.callThrough();
     component.onSubmit();
     expect(editSpy).toHaveBeenCalled();
@@ -44,15 +43,17 @@ describe('PersonalInfoComponent', () => {
 
   it(`form should be invalid`,  (() => {
     component.personalInfoForm.controls['email'].setValue('');
-    component.personalInfoForm.controls['name'].setValue('');
-    component.personalInfoForm.controls['text'].setValue('');
+    component.personalInfoForm.controls['firstName'].setValue('');
+    component.personalInfoForm.controls['lastName'].setValue('');
+    component.personalInfoForm.controls['phone'].setValue('');
     expect(component.personalInfoForm.valid).toBeFalsy();
   }));
 
   it(`form should be valid`, (() => {
-    component.personalInfoForm.controls['email'].setValue('asd@asd.com');
-    component.personalInfoForm.controls['name'].setValue('aada');
-    component.personalInfoForm.controls['text'].setValue('text');
+    component.personalInfoForm.controls['email'].setValue('jessie@asd.com');
+    component.personalInfoForm.controls['firstName'].setValue('Jessie');
+    component.personalInfoForm.controls['lastName'].setValue('furigay');
+    component.personalInfoForm.controls['phone'].setValue('te1234567890');
     expect(component.personalInfoForm.valid).toBeTruthy();
   }));
 });

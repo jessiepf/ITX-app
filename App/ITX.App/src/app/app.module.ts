@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PersonalInfoComponent } from './personal-info/personal-info.component';
+import { PersonalListComponent } from './personal-list/personal-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonalInfoComponent,
+    PersonalListComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,4 +23,4 @@ import { PersonalInfoComponent } from './personal-info/personal-info.component';
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
-export class AppModule { }
+export class AppModule {  }

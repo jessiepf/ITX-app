@@ -1,9 +1,60 @@
-<div>
-    {{ text }}
-    {{!personalInfoForm.valid}}
+<div class="container">
+  <div class="card login-form">
+    <div class="card-body">
+      <h3 class="card-title text-center">{{text}}</h3>
+      <div class="card-text">
+
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">Incorrect username or password.</div>
+
+        <form id="personal-form" [formGroup]="personalInfoForm" (ngSubmit)="onSubmit()" novalidate>
+          <!-- to error: add class "has-danger" -->
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input class="form-control form-control-sm" id="firstName" formControlName="firstName">
+            <span class="text-danger"
+              *ngIf="(personalInfoFormControl['firstName'].touched || submitted) && personalInfoFormControl['firstName'].errors?. ['required']">
+              First Name is required
+            </span>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input class="form-control form-control-sm" id="lastName" formControlName="lastName">
+            <span class="text-danger"
+              *ngIf="(personalInfoFormControl['lastName'].touched || submitted) && personalInfoFormControl['lastName'].errors?. ['required']">
+              Last Name is required
+            </span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control form-control-sm" id="email" formControlName="email">
+            <span class="text-danger"
+              *ngIf="(personalInfoFormControl['email'].touched || submitted) && personalInfoFormControl['email'].errors?. ['required']">
+              Email is required.
+            </span>
+
+            <span class="text-danger"
+              *ngIf="(personalInfoFormControl['email'].touched || submitted) && personalInfoFormControl['email'].errors?. ['email']">
+              Email is invalid format.
+            </span>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input class="form-control form-control-sm" id="phone" formControlName="phone">
+            <span class="text-danger"
+              *ngIf="(personalInfoFormControl['phone'].touched || submitted) && personalInfoFormControl['phone'].errors?. ['required']">
+              Phone is required
+            </span>
+          </div>
+          <button type="submit" [disabled]="!personalInfoForm.valid" class="btn btn-primary btn-block">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 
-<form id="contact-form" [formGroup]="personalInfoForm" (ngSubmit)="onSubmit()" novalidate>
+
+<!-- <form id="contact-form" [formGroup]="personalInfoForm" (ngSubmit)="onSubmit()" novalidate>
   <div class="form-group">
     <label class="center-block">Name:
       <input class="form-control" formControlName="name">
@@ -17,4 +68,4 @@
   </div>
     <button type="submit"
             [disabled]="!personalInfoForm.valid" class="btn btn-success">Save</button>
-</form>
+</form> -->
