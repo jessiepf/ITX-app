@@ -34,14 +34,14 @@ namespace ADACA.Infrastructure
             return await _personalContext.PersonalInformations.OrderBy(p => p.id).Skip(skip).Take(take).ToListAsync();
         }
 
-        public async Task<PersonalInformation> getAllPersonalInfoById(int id)
+        public async Task<PersonalInformation> getPersonalInfoById(int id)
         {
             return await _personalContext.PersonalInformations.Where(p => p.id == id).SingleOrDefaultAsync();
         }
 
-        public async Task<bool> updatePersonalInfor(PersonalInformationDto personalInformationDto)
+        public async Task<bool> updatePersonalInfor(int id, PersonalInformationDto personalInformationDto)
         {
-            PersonalInformation personalInformation = await _personalContext.PersonalInformations.Where(p => p.id == personalInformationDto.id).SingleOrDefaultAsync();
+            PersonalInformation personalInformation = await _personalContext.PersonalInformations.Where(p => p.id == id).SingleOrDefaultAsync();
 
             if (personalInformation != null)
             {

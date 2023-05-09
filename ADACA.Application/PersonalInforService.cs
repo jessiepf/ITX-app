@@ -28,14 +28,14 @@ namespace ADACA.Application
             return await _personalInfoRepository.getAllPersonalInfo(take, skip);
         }
 
-        public Task<PersonalInformation> getAllPersonalInfoById(int id)
+        public Task<PersonalInformation> getPersonalInfoById(int id)
         {
-            return _personalInfoRepository.getAllPersonalInfoById(id);
+            return _personalInfoRepository.getPersonalInfoById(id);
         }
 
-        public Task<bool> updatePersonalInfor(PersonalInformationDto personalInformation)
+        public Task<bool> updatePersonalInfor(int id, PersonalInformationDto personalInformation)
         {
-            return _personalInfoRepository.updatePersonalInfor(personalInformation);
+            return _personalInfoRepository.updatePersonalInfor(id, personalInformation);
         }
     }
 }

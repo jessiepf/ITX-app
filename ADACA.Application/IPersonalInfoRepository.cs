@@ -7,9 +7,9 @@ namespace ADACA.Application
 	public interface IPersonalInfoRepository
 	{
         Task<IEnumerable<PersonalInformation>> getAllPersonalInfo(int take, int skip);
-        Task<PersonalInformation> getAllPersonalInfoById(int id);
+        Task<PersonalInformation> getPersonalInfoById(int id);
         Task<bool> addPersonalInfor(PersonalInformation personalInformation);
-        Task<bool> updatePersonalInfor(PersonalInformationDto personalInformation);
+        Task<bool> updatePersonalInfor(int id,PersonalInformationDto personalInformation);
         Task<bool> deletePersonalInfor(int id);
     }
 }

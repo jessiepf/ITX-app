@@ -26,6 +26,13 @@ namespace ITX.WebApi.Controllers
             return Ok(personalInfpos);
         }
 
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult<PersonalInformation>> getPersonalInfomationById(int id)
+        {
+            var personalInfpos = await _service.getPersonalInfoById(id);
+            return Ok(personalInfpos);
+        }
+
         [HttpPost]
         public async Task<ActionResult<bool>> addPersonalInfo(PersonalInformationDto personalInformationDto)
         {
@@ -35,12 +42,12 @@ namespace ITX.WebApi.Controllers
             return  Ok(result);
         }
 
-        [HttpPut]
-        public async Task<ActionResult<bool>> updatePersonalInfo(PersonalInformationDto personalInformationDto)
+        [HttpPut("{id:int}")]
+        public async Task<ActionResult<bool>> updatePersonalInfo(int id, PersonalInformationDto personalInformationDto)
         {
             //PersonalInformation personalInformation = _mapper.Map<PersonalInformation>(personalInformationDto);
 
-            var result = await _service.updatePersonalInfor(personalInformationDto);
+            var result = await _service.updatePersonalInfor(id, personalInformationDto);
             return Ok(result);
         }
 
