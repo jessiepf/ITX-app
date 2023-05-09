@@ -28,8 +28,16 @@ export class PersonalServiceService {
       .pipe(retry(1), catchError(this.handleError));
   }
 
+  // HttpClient API get() method => Fetch PersonalInfo
+  getPersonalInformationById(id: number): Observable<PersonalInfo> {
+    return this.httpClient
+      .get<PersonalInfo>(this.apiURL + '/' + id)
+      .pipe(retry(1), catchError(this.handleError));
+  }
+
   // HttpClient API post() method => Create PersonalInfo
   createPersonalInformation(personalInfo: PersonalInfo): Observable<PersonalInfo> {
+    console.log(personalInfo)
     return this.httpClient
       .post<PersonalInfo>(
         this.apiURL,
@@ -38,15 +46,25 @@ export class PersonalServiceService {
       .pipe(retry(1), catchError(this.handleError));
   }
   // HttpClient API put() method => Update PersonalInfo
-  updatePersonalInformation(id: any, personalInfo: PersonalInfo): Observable<PersonalInfo> {
+  updatePersonalInformation(id: number, personalInfo: PersonalInfo): Observable<PersonalInfo> {
+    debugger;
     return this.httpClient
       .put<PersonalInfo>(
-        this.apiURL + id,
+        this.apiURL + '/' + id,
         personalInfo
       )
       .pipe(retry(1), catchError(this.handleError));
   }
 
+   // HttpClient API put() method => delete PersonalInfo
+   deletePersonalInformation(id: number): Observable<PersonalInfo> {
+    debugger;
+    return this.httpClient
+      .delete<PersonalInfo>(
+        this.apiURL + '?id=' + id,
+      )
+      .pipe(retry(1), catchError(this.handleError));
+  }
   // Error handling
   handleError(error: any) {
     debugger

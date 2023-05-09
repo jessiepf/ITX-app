@@ -1,15 +1,20 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PersonalServiceService } from '../service/personal-service.service';
 import { PersonalInfo } from '../models/PersonalInfo';
-import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
 @Component({
-  selector: 'app-personal-info',
-  templateUrl: './personal-info.component.html',
-  styleUrls: ['./personal-info.component.scss']
+  selector: 'app-edit-personal-info',
+  templateUrl: './edit-personal-info.component.html',
+  styleUrls: ['./edit-personal-info.component.scss']
 })
-export class PersonalInfoComponent {
+export class EditPersonalInfoComponent {
+
   title = 'Personal Information';
+  id = this.actRoute.snapshot.params['id'];
+  personalInfo$!: Observable<PersonalInfo>
 
   personalInfo: PersonalInfo = {
     id: 0,
@@ -18,10 +23,28 @@ export class PersonalInfoComponent {
     emailAddress: '',
     phoneNumber: '',
   };
+  
   personalInfoForm!: FormGroup;
 
-  constructor(public router: Router, public personalServiceService: PersonalServiceService) {
+  constructor(
+    public actRoute: ActivatedRoute,
+    public router: Router,
+    public personalServiceService: PersonalServiceService
+  ) { }
+
+  ngOnInit() {
+    
     this.createForm();
+    this.personalInfo$ = this.personalServiceService.getPersonalInformationById(this.id);
+    this.personalInfo$.subscribe((data) => {
+      this.personalInfoForm.patchValue({
+        id: data.id,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        emailAddress: data.emailAddress,
+        phoneNumber: data.phoneNumber,
+      })
+    })
   }
 
   createForm(): void {
@@ -47,14 +70,13 @@ export class PersonalInfoComponent {
 
   onSubmit(): void {
 
+    this.personalInfo.id = this.id;
     this.personalInfo.firstName = this.personalInfoForm.value.firstName;
     this.personalInfo.lastName = this.personalInfoForm.value.lastName;
     this.personalInfo.emailAddress = this.personalInfoForm.value.emailAddress;
     this.personalInfo.phoneNumber = this.personalInfoForm.value.phoneNumber;
 
-    this.personalServiceService.createPersonalInformation(this.personalInfo).subscribe((data) => {
-      console.log(data)
-      debugger;
+    this.personalServiceService.updatePersonalInformation(this.id, this.personalInfo).subscribe(() => {
       this.router.navigate(['/personal-list'])
     })
   }

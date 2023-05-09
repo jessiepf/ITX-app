@@ -1,25 +1,24 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PersonalInfoComponent } from './personal-info.component';
-import { BrowserModule, By } from '@angular/platform-browser';
+import { RouterTestingModule } from "@angular/router/testing";
+import { EditPersonalInfoComponent } from './edit-personal-info.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-describe('PersonalInfoComponent', () => {
-  let component: PersonalInfoComponent;
-  let fixture: ComponentFixture<PersonalInfoComponent>;
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+describe('EditPersonalInfoComponent', () => {
+  let component: EditPersonalInfoComponent;
+  let fixture: ComponentFixture<EditPersonalInfoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PersonalInfoComponent ],
+      declarations: [ EditPersonalInfoComponent ],
       imports: [
-        BrowserModule,
-        FormsModule,
-        ReactiveFormsModule,
+        RouterTestingModule,
         HttpClientTestingModule
-      ]
+      ],
+      schemas: [NO_ERRORS_SCHEMA],
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PersonalInfoComponent);
+    fixture = TestBed.createComponent(EditPersonalInfoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

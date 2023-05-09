@@ -13,7 +13,7 @@
               </div>
               <div class="col-sm-6">
                 <a routerLink="/create-personal" class="btn btn-success"> <span>Add New Employee</span></a>
-              
+
               </div>
             </div>
           </div>
@@ -34,10 +34,11 @@
                 <td>{{personalInfo.emailAddress}}</td>
                 <td>{{personalInfo.phoneNumber}}</td>
                 <td>
-                  <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons"
-                      data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                  <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons"
-                      data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+
+                  <a class="edit" routerLink="/personal-edit/{{ personalInfo.id }}"><i
+                      class="ni ni-ruler-pencil"></i></a>
+                  <a class="delete"><i class="ni ni-fat-remove"></i></a>
+
                 </td>
               </tr>
             </tbody>
