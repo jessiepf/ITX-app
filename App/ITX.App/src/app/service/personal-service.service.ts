@@ -12,17 +12,8 @@ export class PersonalServiceService {
   apiURL = 'http://localhost:5173/PersonalInformation';
   constructor(private httpClient: HttpClient) { }
 
-  // getAllPersonalInformation() {
-  //   this.httpClient.get(this.baseUrl + '/products').subscribe((res) => {
-  //     debugger;
-  //     console.log(res);
-  //   });
-
-  // }
-
-  // // HttpClient API get() method => Fetch employees list
+  // HttpClient API get() method => Fetch employees list
   getAllPersonalInformation(): Observable<PersonalInfo[]> {
-    debugger;
     return this.httpClient
       .get<PersonalInfo[]>(this.apiURL + '?take=20&skip=0')
       .pipe(retry(1), catchError(this.handleError));
@@ -47,7 +38,7 @@ export class PersonalServiceService {
   }
   // HttpClient API put() method => Update PersonalInfo
   updatePersonalInformation(id: number, personalInfo: PersonalInfo): Observable<PersonalInfo> {
-    debugger;
+
     return this.httpClient
       .put<PersonalInfo>(
         this.apiURL + '/' + id,
@@ -58,7 +49,7 @@ export class PersonalServiceService {
 
    // HttpClient API put() method => delete PersonalInfo
    deletePersonalInformation(id: number): Observable<PersonalInfo> {
-    debugger;
+    
     return this.httpClient
       .delete<PersonalInfo>(
         this.apiURL + '?id=' + id,
@@ -67,7 +58,6 @@ export class PersonalServiceService {
   }
   // Error handling
   handleError(error: any) {
-    debugger
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
       // Get client-side error

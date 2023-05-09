@@ -53,8 +53,6 @@ export class PersonalInfoComponent {
     this.personalInfo.phoneNumber = this.personalInfoForm.value.phoneNumber;
 
     this.personalServiceService.createPersonalInformation(this.personalInfo).subscribe((data) => {
-      console.log(data)
-      debugger;
       this.router.navigate(['/personal-list'])
     })
   }

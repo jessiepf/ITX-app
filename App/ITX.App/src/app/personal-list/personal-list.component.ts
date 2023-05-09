@@ -20,4 +20,12 @@ export class PersonalListComponent {
   loadPersonalInfos() {
     this.personalInfos$ = this.personalServiceService.getAllPersonalInformation();
   }
+
+  delete(id: number) {
+    if (confirm('Are you sure?')) {
+      this.personalServiceService.deletePersonalInformation(id).subscribe(()=> {
+        this.loadPersonalInfos();
+      })
+    }
+  }
 }

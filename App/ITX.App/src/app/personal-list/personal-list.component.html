@@ -4,7 +4,6 @@
     </div>
     <div class="container">
       <div class="row justify-content-center">
-        <!-- <div class="container"> -->
         <div class="table-wrapper">
           <div class="table-title">
             <div class="row">
@@ -37,7 +36,7 @@
 
                   <a class="edit" routerLink="/personal-edit/{{ personalInfo.id }}"><i
                       class="ni ni-ruler-pencil"></i></a>
-                  <a class="delete"><i class="ni ni-fat-remove"></i></a>
+                  <a class="delete" (click)="delete(personalInfo.id)"><i class="ni ni-fat-remove"></i></a>
 
                 </td>
               </tr>
@@ -57,24 +56,7 @@
             </ul>
           </div>
         </div>
-        <!-- </div> -->
-
       </div>
     </div>
   </section>
 </main>
-<!-- <form id="contact-form" [formGroup]="personalInfoForm" (ngSubmit)="onSubmit()" novalidate>
-  <div class="form-group">
-    <label class="center-block">Name:
-      <input class="form-control" formControlName="name">
-    </label>
-    <label class="center-block">Email:
-      <input class="form-control" formControlName="email">
-    </label>
-    <label class="center-block">Text:
-      <input class="form-control" formControlName="text">
-    </label>
-  </div>
-    <button type="submit"
-            [disabled]="!personalInfoForm.valid" class="btn btn-success">Save</button>
-</form> -->

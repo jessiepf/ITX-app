@@ -9,14 +9,14 @@ describe('EditPersonalInfoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditPersonalInfoComponent ],
+      declarations: [EditPersonalInfoComponent],
       imports: [
         RouterTestingModule,
         HttpClientTestingModule
       ],
       schemas: [NO_ERRORS_SCHEMA],
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(EditPersonalInfoComponent);
     component = fixture.componentInstance;
@@ -37,7 +37,7 @@ describe('EditPersonalInfoComponent', () => {
     expect(editSpy).toHaveBeenCalled();
   }));
 
-  it(`form should be invalid`,  (() => {
+  it(`form should be invalid`, (() => {
     component.personalInfoForm.controls['emailAddress'].setValue('');
     component.personalInfoForm.controls['firstName'].setValue('');
     component.personalInfoForm.controls['lastName'].setValue('');
@@ -52,4 +52,22 @@ describe('EditPersonalInfoComponent', () => {
     component.personalInfoForm.controls['phoneNumber'].setValue('te1234567890');
     expect(component.personalInfoForm.valid).toBeTruthy();
   }));
+
+  it(`form group should be a value`, (() => {
+
+    component.personalInfoForm.patchValue({
+      id: 1,
+      firstName: 'Jessie',
+      lastName: 'Furigay',
+      emailAddress: 'jessie@gmail.com',
+      phoneNumber: '1111111'
+    });
+
+    fixture.detectChanges();
+    expect(component.personalInfoForm.controls['firstName'].value).toBe('Jessie');
+    expect(component.personalInfoForm.controls['lastName'].value).toBe('Furigay');
+    expect(component.personalInfoForm.controls['emailAddress'].value).toBe('jessie@gmail.com');
+    expect(component.personalInfoForm.controls['phoneNumber'].value).toBe('1111111');
+  }));
+
 });

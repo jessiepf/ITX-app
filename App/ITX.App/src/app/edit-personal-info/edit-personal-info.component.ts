@@ -33,7 +33,6 @@ export class EditPersonalInfoComponent {
   ) { }
 
   ngOnInit() {
-    
     this.createForm();
     this.personalInfo$ = this.personalServiceService.getPersonalInformationById(this.id);
     this.personalInfo$.subscribe((data) => {

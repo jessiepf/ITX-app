@@ -41,7 +41,7 @@ describe('PersonalServiceService', () => {
   };
 
   beforeEach(() => {
-    let httpClientSpyObj = jasmine.createSpyObj('HttpClient', ['get', 'post', 'put','delete']);
+    let httpClientSpyObj = jasmine.createSpyObj('HttpClient', ['get', 'post', 'put', 'delete']);
     TestBed.configureTestingModule({
       providers: [
         PersonalServiceService,
@@ -93,7 +93,7 @@ describe('PersonalServiceService', () => {
 
   it('should make a POST HTTP request and return true if success', (done: DoneFn) => {
     httpClientSpy.post.and.returnValue(of(true));
-    const mockAddPersonalInfo = { id: 0, firstName: 'Jessie 2', lastName: 'furigay', emailAddress: 'x@gmail.com', phoneNumber: '0912345678'};
+    const mockAddPersonalInfo = { id: 0, firstName: 'Jessie 2', lastName: 'furigay', emailAddress: 'x@gmail.com', phoneNumber: '0912345678' };
 
     service.createPersonalInformation(mockAddPersonalInfo).subscribe({
       next: (res: any) => {
@@ -109,7 +109,7 @@ describe('PersonalServiceService', () => {
 
   it('should make a UPDATE HTTP request and return true if success', (done: DoneFn) => {
     httpClientSpy.put.and.returnValue(of(true));
-    const mockUpdatePersonalInfo = { id: 0, firstName: 'Jessie 2', lastName: 'furigay', emailAddress: 'x@gmail.com', phoneNumber: '0912345678'};
+    const mockUpdatePersonalInfo = { id: 0, firstName: 'Jessie 2', lastName: 'furigay', emailAddress: 'x@gmail.com', phoneNumber: '0912345678' };
     service.updatePersonalInformation(1, mockUpdatePersonalInfo).subscribe({
       next: (res: any) => {
         expect(res).toEqual(true);
@@ -124,7 +124,7 @@ describe('PersonalServiceService', () => {
 
   it('should make a DELETE HTTP request and return true if success', (done: DoneFn) => {
     httpClientSpy.delete.and.returnValue(of(true));
-   
+
     service.deletePersonalInformation(1).subscribe({
       next: (res: any) => {
         expect(res).toEqual(true);
