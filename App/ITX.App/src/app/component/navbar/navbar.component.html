@@ -1,18 +1,12 @@
 <nav id="navbar-main"
     class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned">
     <div class="container">
-
         <button class="navbar-toggler" type="button" aria-controls="navbar_global">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="navbar-collapse collapse" id="navbar_global">
             <div class="navbar-collapse-header">
                 <div class="row">
-                    <div class="col-6 collapse-brand">
-                        <a [routerLink]="['/home']">
-                            <img src="./assets/img/brand/blue.png">
-                        </a>
-                    </div>
                     <div class="col-6 collapse-close">
                         <button type="button" class="navbar-toggler" aria-controls="navbar_global">
                             <span></span>
@@ -22,21 +16,18 @@
                 </div>
             </div>
             <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-                
+
                 <li class="nav-item dropdown">
                     <a class="nav-link no-caret" data-toggle="dropdown" role="button">
                         <i class="ni ni-collection d-lg-none"></i>
-                        <span class="nav-link-inner--text">Examples</span>
+                        <span class="nav-link-inner--text">Menu</span>
                     </a>
                     <div class="dropdown-menu">
-                        <a [routerLink]="['/landing']" class="dropdown-item">Landing</a>
-                        <a [routerLink]="['/user-profile']" class="dropdown-item">Profile</a>
-                        <a [routerLink]="['/login']" class="dropdown-item">Login</a>
-                        <a [routerLink]="['/register']" class="dropdown-item">Register</a>
+                        <a [routerLink]="['/create-personal']" class="dropdown-item">Add Personal Information</a>
+                       
                     </div>
                 </li>
             </ul>
-          
         </div>
     </div>
 </nav>
