@@ -2,7 +2,6 @@ import { TestBed } from '@angular/core/testing';
 
 import { PersonalServiceService } from './personal-service.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { PersonalInfo } from '../models/PersonalInfo';
 import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs';
 
@@ -55,9 +54,10 @@ describe('PersonalServiceService', () => {
     httpClientSpy = TestBed.inject(HttpClient) as jasmine.SpyObj<HttpClient>;
     httpTestingController = TestBed.inject(HttpTestingController);
   });
-  // afterEach(() => { 
-  //  httpTestingController.verify(); 
-  // }); 
+  
+  afterEach(() => { 
+   httpTestingController.verify(); 
+  }); 
 
   it('should be created', () => {
     expect(service).toBeTruthy();

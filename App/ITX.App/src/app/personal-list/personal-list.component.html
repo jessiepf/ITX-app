@@ -12,7 +12,6 @@
               </div>
               <div class="col-sm-6">
                 <a routerLink="/create-personal" class="btn btn-success"> <span>Add New Employee</span></a>
-
               </div>
             </div>
           </div>
@@ -33,28 +32,14 @@
                 <td>{{personalInfo.emailAddress}}</td>
                 <td>{{personalInfo.phoneNumber}}</td>
                 <td>
-
+                  
                   <a class="edit" routerLink="/personal-edit/{{ personalInfo.id }}"><i
                       class="ni ni-ruler-pencil"></i></a>
                   <a class="delete" (click)="delete(personalInfo.id)"><i class="ni ni-fat-remove"></i></a>
-
                 </td>
               </tr>
             </tbody>
           </table>
-
-          <div class="clearfix">
-            <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-            <ul class="pagination">
-              <li class="page-item disabled"><a href="#">Previous</a></li>
-              <li class="page-item"><a href="#" class="page-link">1</a></li>
-              <li class="page-item"><a href="#" class="page-link">2</a></li>
-              <li class="page-item active"><a href="#" class="page-link">3</a></li>
-              <li class="page-item"><a href="#" class="page-link">4</a></li>
-              <li class="page-item"><a href="#" class="page-link">5</a></li>
-              <li class="page-item"><a href="#" class="page-link">Next</a></li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>

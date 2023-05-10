@@ -1,49 +1,32 @@
 <main>
-    <section class="section section-shaped section-lg">
-      <div class="shape shape-style-1 bg-gradient-default">
-  
-      </div>
-      <div class="container pt-lg-md">
-        <div class="row justify-content-center">
-          <div class="col-lg-5">
-            <div class="card bg-secondary shadow border-0">
-              <div class="card-header bg-white pb-5">
-                <div class="text-muted text-center mb-3">
-                  <h3>{{title}}</h3>
-                </div>
-              </div>
-              <div class="card-body px-lg-5 py-lg-5">
-  
-                <form [formGroup]="personalInfoForm" (ngSubmit)="onSubmit()" novalidate>
-                  <div class="form-group mb-3">
-                    <div class="input-group input-group-alternative">
-                      <input class="form-control" placeholder="First Name" formControlName="firstName">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="input-group input-group-alternative">
-                      <input class="form-control" placeholder="Last Name" formControlName="lastName">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="input-group input-group-alternative">
-                      <input class="form-control" placeholder="Email" formControlName="emailAddress">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="input-group input-group-alternative">
-                      <input class="form-control" placeholder="Phone" formControlName="phoneNumber">
-                    </div>
-                  </div>
-                  <div class="text-center">
-                    <button type="submit" class="btn btn-primary my-4"
-                      [disabled]="!personalInfoForm.valid">Update</button>
-                  </div>
-                </form>
-              </div>
-            </div>
+  <app-container [title]="'Update Personal Information'">
+    <div class="card-body px-lg-5 py-lg-5">
+      <form [formGroup]="personalInfoForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="form-group mb-3">
+          <div class="input-group input-group-alternative">
+            <input class="form-control" placeholder="First Name" formControlName="firstName">
           </div>
         </div>
-      </div>
-    </section>
-  </main>
+        <div class="form-group">
+          <div class="input-group input-group-alternative">
+            <input class="form-control" placeholder="Last Name" formControlName="lastName">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group input-group-alternative">
+            <input class="form-control" placeholder="Email" formControlName="emailAddress">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group input-group-alternative">
+            <input class="form-control" placeholder="Phone" formControlName="phoneNumber">
+          </div>
+        </div>
+        <div class="text-center flex-row">
+          <button type="submit" class="btn btn-primary my-4" [disabled]="!personalInfoForm.valid">Update</button>
+          <button type="button" routerLink="/personal-list" class="btn btn-primary my-4">Back to List</button>
+        </div>
+      </form>
+    </div>
+  </app-container>
+</main>

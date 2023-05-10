@@ -3,6 +3,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PersonalInfoComponent } from './personal-info.component';
 import { BrowserModule, By } from '@angular/platform-browser';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 describe('PersonalInfoComponent', () => {
   let component: PersonalInfoComponent;
   let fixture: ComponentFixture<PersonalInfoComponent>;
@@ -15,7 +16,8 @@ describe('PersonalInfoComponent', () => {
         FormsModule,
         ReactiveFormsModule,
         HttpClientTestingModule
-      ]
+      ],
+      schemas: [NO_ERRORS_SCHEMA],
     })
     .compileComponents();
 
@@ -27,10 +29,6 @@ describe('PersonalInfoComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it(`should have as text 'Personal Information Form'`, (() => {
-    expect(component.title).toEqual('Personal Information');
-  }));
 
   it(`should call the onSubmit method`, (() => {
     const editSpy = spyOn(component, 'onSubmit').and.callThrough();

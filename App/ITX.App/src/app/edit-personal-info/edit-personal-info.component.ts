@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PersonalServiceService } from '../service/personal-service.service';
 import { PersonalInfo } from '../models/PersonalInfo';
@@ -12,7 +12,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class EditPersonalInfoComponent {
 
-  title = 'Personal Information';
   id = this.actRoute.snapshot.params['id'];
   personalInfo$!: Observable<PersonalInfo>
 

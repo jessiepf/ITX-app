@@ -1,2 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.edit, .delete {
+    cursor: pointer;
+}

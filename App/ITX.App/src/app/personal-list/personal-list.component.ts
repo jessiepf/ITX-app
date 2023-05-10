@@ -12,7 +12,7 @@ export class PersonalListComponent {
 
   personalInfos$!: Observable<PersonalInfo[]>
 
-  constructor(public personalServiceService: PersonalServiceService) {}
+  constructor(public personalServiceService: PersonalServiceService) { }
   ngOnInit() {
     this.loadPersonalInfos();
   }
@@ -23,7 +23,7 @@ export class PersonalListComponent {
 
   delete(id: number) {
     if (confirm('Are you sure?')) {
-      this.personalServiceService.deletePersonalInformation(id).subscribe(()=> {
+      this.personalServiceService.deletePersonalInformation(id).subscribe(() => {
         this.loadPersonalInfos();
       })
     }

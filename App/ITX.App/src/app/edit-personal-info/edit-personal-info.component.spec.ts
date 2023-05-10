@@ -38,10 +38,6 @@ describe('EditPersonalInfoComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it(`should have as text 'Personal Information Form'`, (() => {
-    expect(component.title).toEqual('Personal Information');
-  }));
-
   it(`should call the onSubmit method`, (() => {
     const editSpy = spyOn(component, 'onSubmit').and.callThrough();
     component.onSubmit();

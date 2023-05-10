@@ -9,8 +9,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./personal-info.component.scss']
 })
 export class PersonalInfoComponent {
-  title = 'Personal Information';
-
   personalInfo: PersonalInfo = {
     id: 0,
     firstName: '',
