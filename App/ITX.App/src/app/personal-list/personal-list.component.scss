@@ -26,9 +26,7 @@
     margin: 5px 0 0;
     font-size: 24px;
 }
-.table-title .btn-group {
-    float: right;
-}
+
 .table-title .btn {
     color: #fff;
     float: right;
@@ -45,10 +43,7 @@
     font-size: 21px;
     margin-right: 5px;
 }
-.table-title .btn span {
-    float: left;
-    margin-top: 2px;
-}
+
 table.table tr th, table.table tr td {
     border-color: #e9e9e9;
     padding: 12px 15px;
@@ -95,43 +90,3 @@ table.table td a.delete {
 table.table td i {
     font-size: 19px;
 }
-table.table .avatar {
-    border-radius: 50%;
-    vertical-align: middle;
-    margin-right: 10px;
-}
-.pagination {
-    float: right;
-    margin: 0 0 5px;
-}
-.pagination li a {
-    border: none;
-    font-size: 13px;
-    min-width: 30px;
-    min-height: 30px;
-    color: #999;
-    margin: 0 2px;
-    line-height: 30px;
-    
-    text-align: center;
-    padding: 0 6px;
-}
-.pagination li a:hover {
-    color: #666;
-}	
-
-.pagination li.active a:hover {        
-    background: #0397d6;
-}
-.pagination li.disabled i {
-    color: #ccc;
-}
-.pagination li i {
-    font-size: 16px;
-    padding-top: 6px
-}
-.hint-text {
-    float: left;
-    margin-top: 10px;
-    font-size: 13px;
-}    
